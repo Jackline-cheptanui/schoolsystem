@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #courses {
+         font-family: Arial, Helvetica, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+       }
+       
+       #courses td, #courses th {
+         border: 1px solid rgb(15, 15, 15);
+         padding: 8px;
+       }
+       
+       #courses tr:nth-child(even){background-color: #f2f2f2be;}
+       
+       #courses tr:hover {background-color: rgba(221, 221, 221, 0.192);}
+       
+       #courses th {
+         padding-top: 12px;
+         padding-bottom: 12px;
+         text-align: left;
+         background-color: palevioletred;
+         color:black;
+       }
+           
+          
+           
+           h1{
+               text-align: center;
+               color: black;
+               padding-top: 10%;
+           }
+    </style> 
+    <h1>Course List Data</h1>      
+    
+    <table id="courses">
+        <th>course_name</th>
+        <th>trainer</th>
+        <th>profile</th>
+        <th> syllabus</th>
+        <th>course_code</th>
+        <th> coursedescription</th>
+        <th>Edit</th>
+        <th>profile</th>
+        <th>Delete</th>
+       
+    </tr>
+    {% for course in courses %}
+    <tr>
+            <td>{{course.course_name }}</td>
+            <td>{{ course.trainer}}</td>
+            {% if course.profile %}
+            <td><img src="{{course.profile.url}}"></td>
+            {% endif %}
+            <td>{{course.syllabus}}</td>
+            <td>{{course.course_code}}</td>
+            <td>{{course.coursedescription}}</td>
+
+            <td><a href="{%url 'edit_course' id=course.id %}">Edit</a></td>
+            <td><a href="{% url 'course_profile' id=course.id %}">Profile</a></td>
+            <td><a href="{% url 'delete_courses' id=course.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

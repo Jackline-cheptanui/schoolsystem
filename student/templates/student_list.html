@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #students{
+         font-family: Arial, Helvetica, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+       }
+       
+       #students td, #trainers th {
+         border: 1px solid rgb(15, 15, 15);
+         padding: 8px;
+       }
+       
+       #students tr:nth-child(even){background-color: #f2f2f2be;}
+       
+       #students tr:hover {background-color: rgba(221, 221, 221, 0.192);}
+       
+       #students th {
+         padding-top: 12px;
+         padding-bottom: 12px;
+         text-align: left;
+         background-color: palevioletred;
+         color:black;
+       }
+           h1{
+               text-align: center;
+               color: black;
+               padding-top: 10%;
+           }
+    </style> 
+    <h1>StudentList Data</h1>      
+    
+    <table id="students">
+       
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>Age</th>
+            <th>email</th>
+            <th>nationality</th>
+            <th>gender</th>
+            <th>date_of_birth</th>
+            <th>rolenumber</th>
+            <th>student_id</th>
+            <th>language</th>
+            <th>date_of_enrollment</th>
+            <th>profile</th>
+            <th>latopserialnumber</th>
+            <th>district</th>
+            <th>medical_report</th>
+            <th>phone_number</th>
+            <th>nationality_id</th>
+            <th>profile</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.first_name}}</td>
+            <td>{{ student.last_name}}</td>
+            <td>{{ student.age}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.nationality}}</td>
+            <td>{{student.gender}}</td>
+           <td>{{student.date_of_birth}}</td>
+           <td>{{student.rolenumber}}</td>
+            <td>{{student.student_id}}</td>
+            <td>{{student.language}}</td>
+            <td>{{student.date_of_enrollment}}</td>
+            {% if student.profile %}
+            <td><img src="{{student.profile.url}}"></td>
+            {% endif %}
+            <td>{{student.laptopserialnumber}}</td>
+            <td>{{student.district}}</td>
+            <td>{{student.medical_report}}</td>
+            <td>{{student.nationality_id}}</td>
+            <td>{{student.phone_number}}</td>
+            <td>{{student.phone_number}}</td>
+          
+          
+            <td><a href="{%url 'edit_student' id=student.id%}">Edit</a></td>
+            <td><a href="{%url 'student_profile' id=student.id%}">Profile</a></td>
+            <td><a href="{%url 'delete_student' id=student.id%}">Delete</a></td>
+          
+           </tr>
+        {%endfor%}
+    </table>
+
+</body>
+
+</html>
