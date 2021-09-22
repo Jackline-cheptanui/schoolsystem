@@ -9,6 +9,11 @@
 </head>
 <body>
     <style>
+      
+
+
+
+
         
         body{
       background-image: url("https://i.pinimg.com/originals/6f/27/2f/6f272f5f7caf461c4eed8ad75eafcf52.jpg");
@@ -53,7 +58,7 @@ float: right;
  color: whitesmoke;
   width: 100%;
   display: inline;
-background-color: purple;
+background-color: #800080;
   padding-right: 90px;
 }
  .nav_bar:hover{
@@ -75,21 +80,30 @@ height: 100px;
   padding: 40px;
 }
 
-</style>
+</style> 
+<input type="search" name="item_name" placeholder="search for admission" class="form-control form-control-borderless">
+</div>
+<div class="col-auto">
+    <button class="btn btn-success" type="submit">search</button>
+</div>
+</div>
+
+
+
 <div class="navbar">
     
     <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-WRaIRaHZu5aQ7o3zjse4j6nq_qBag4mgg&usqp=CAU"> -->
     <a class="nav_bar" href="{% url 'student_list' %}"> Student</a>  
     <a class="nav_bar" href="{% url 'trainer_list' %}"> Trainer </a> 
     <a class="nav_bar" href="{% url 'course_list' %}"> Courses</a>
-    <a class="nav_bar" href="{% url 'cal'%}"> Event</a> 
+    <a class="nav_bar" href="{% url 'event_list' %}"> Event</a> 
     </div>
     
     <h1>Welcome to AkiraChix</h1>
     <a button="button">{{students}} Students</a>
     <a button="button">{{courses}} Courses</a>
     <a button="button">{{trainers}} Traines</a>
-    <a button="button">{{cal}} Events</a>
+    <a button="button">{{events}} Events</a>
 </body>
 </html>
 

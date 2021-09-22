@@ -1,15 +1,15 @@
-from typing import ClassVar
+
 from django.db import models
 from rest_framework import serializers
 from student.models import Student
 from trainer.models import Trainer
 from courses.models import Courses
-from cal.models import Event
+from event.models  import Event
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model=Student
-        fields=("first_name","last_name","age")
+        fields=("first_name","last_name","age","nationality","profile")
 class TrainerSerializer(serializers.ModelSerializer):
     class Meta:
         model=Trainer
@@ -24,6 +24,6 @@ class CoursesSerializer(serializers.ModelSerializer):
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model=Event
-        fields=('tittle',"end_time","start_time")
+        fields=('Event_Name',"Event_id","Event_planner")
 
 

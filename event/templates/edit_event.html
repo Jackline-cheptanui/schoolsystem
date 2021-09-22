@@ -1,0 +1,28 @@
+{% include 'home.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Event form</title>
+</head>
+<body>
+    <style>
+    </style>
+   <div class="wrapper">
+       <div class="form">
+    <form method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <img src="https://akirachix.com/img/logo.png?_cchid=1660c557f83aa4644e2a8d4bf0ddd4fb">
+        <h1>Event Registration Form </h1>
+        {{form.as_p}}
+        <button>Submit</button>
+    </form>
+    </div>
+    </div>
+    <div class="div"></div>
+    <div id="div"></div>
+</body>
+</html>

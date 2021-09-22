@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for schoolsystem project.
 
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     'student',
     'trainer',
     'courses',
-    'cal',
+    'event',
     'core',
     'rest_framework',
     
@@ -135,3 +136,4 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'static/media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELDEFAULT_AUTO_FIELDDEFAULT_AUTO_FIELDDEFAULT_AUTO_FIELDD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())

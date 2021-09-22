@@ -1,11 +1,12 @@
 
-from django.db.models import query
 from django.shortcuts import render
+from event.models import Event
 from rest_framework import viewsets
 from student.models import Student
 from trainer.models import Trainer
 from courses.models import Courses
-from cal.models import Event
+
+
 from .serializers import StudentSerializer
 from.serializers import TrainerSerializer
 from.serializers import CoursesSerializer
