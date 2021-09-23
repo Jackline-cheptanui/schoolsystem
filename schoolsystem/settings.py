@@ -1,3 +1,4 @@
+import os
 import django_heroku
 """
 Django settings for schoolsystem project.
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&gbc%i+ut19o+4=sg3fd7gje5maj76spf*+ugnp-+2kb^6%qwi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
