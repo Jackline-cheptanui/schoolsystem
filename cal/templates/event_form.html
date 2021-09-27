@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block title %}
+    {% endblock %}
+
+    { % block content %}
+    <h5>AkiraChix codehive</h5>
+    <div class="topnav">
+       <a style="margin-top: 10%;" href="{ %url 'cal:event_form'% }">EVENT</a>
+       <a style="margin-top: 10%;" href="{ %url 'trainer:register_trainer'% }">TRAINER</a>
+       <a style="margin-top: 10%;" href="{ %url 'student:register_student'% }">STUDENT</a>
+       <a style="margin-top: 10%;" href="{ %url 'courses:register_courses'% }">COURSES</a>
+    </div>
+    <div>
+        <form method="post">
+            <h8>Event</h8>
+            {% csrf_token %}
+            <table class="form form-table">
+                {{ form.as_p}}
+            </table>
+            <input class="btn btn-success" type="submit" value="Submit" style="background-color: purple; border-radius: 10px; width:100%;">
+        </form>
+       
+    </div>
+    <style>
+    select{
+        width:100%;
+        border-radius: 10px;
+        font-size: 15px;
+        border:1px solid;
+        padding: 8px 10px;
+        border:purple;
+    }
+    h5{
+        color: white;
+        text-align: center;
+        padding-top: 20px;
+        background-color: purple;
+    }
+    h8{
+        color: purple;
+        text-align: center;
+    }
+    img{
+        margin-left: 130px;
+        width: 400px;
+    }
+    form{
+        text-align: center;
+        padding-top: 20px;
+        color: purple;
+    }
+    .btn btn-success{
+        color: purple;
+    }
+    div{
+        border-radius: 10px;
+        background-color: white;
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+    body{
+        background-color: #eee;
+    }
+    .topnav{
+        overflow: hidden;
+        background-color: purple;
+    }
+    .topnav a{
+        float: right;
+        color: #f2f2f2;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        z-index: 999;
+    }
+    .topnav a:hover{
+        background-color: white;
+        color: purple;
+        border-radius: 10px;
+    }
+    .topnav a .active{
+        background-color: purple;
+        color: white;
+        position: fixed;
+    }
+
+
+</style>
+</body>
+</html>

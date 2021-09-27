@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from event.models import Event
+from cal.models import Event
 from rest_framework import viewsets
 from student.models import Student
 from trainer.models import Trainer
@@ -10,7 +10,7 @@ from courses.models import Courses
 from .serializers import StudentSerializer
 from.serializers import TrainerSerializer
 from.serializers import CoursesSerializer
-from .serializers import EventSerializer
+from .serializers import CalSerializer
 
 class StudentViewset(viewsets.ModelViewSet):
     queryset =Student.objects.all()
@@ -24,8 +24,8 @@ class CoursesViewset(viewsets.ModelViewSet):
     queryset=Courses.objects.all()
     serializer_class=CoursesSerializer
 
-class EventViewset(viewsets.ModelViewSet):
+class CalViewset(viewsets.ModelViewSet):
     queryset=Event.objects.all()
-    serialzer_class=EventSerializer
+    serialzer_class=CalSerializer
 
 

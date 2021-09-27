@@ -55,7 +55,7 @@ float: right;
   text-align: center;
   float: right;
   padding-left: 60px;
- color: whitesmoke;
+ color: white;
   width: 100%;
   display: inline;
 background-color: #800080;
@@ -92,18 +92,22 @@ height: 100px;
 
 <div class="navbar">
     
-    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-WRaIRaHZu5aQ7o3zjse4j6nq_qBag4mgg&usqp=CAU"> -->
-    <a class="nav_bar" href="{% url 'student_list' %}"> Student</a>  
-    <a class="nav_bar" href="{% url 'trainer_list' %}"> Trainer </a> 
-    <a class="nav_bar" href="{% url 'course_list' %}"> Courses</a>
-    <a class="nav_bar" href="{% url 'event_list' %}"> Event</a> 
+    <h1>Welcome to AkiraChix</h1>    
+    <a href="{% url 'CalenderView'%}">Events</a>
+       <a href="{% url 'course_list' %}">Courses</a>
+       <a href="{% url 'student_list' %}">Students</a>
+       <a href="{% url 'trainer_list'%}">Trainers</a>
+ 
+                                                
+    <!-- <a class="nav_bar" href="{ %url 'student_list'% }"> Student</a>  
+    <a class="nav_bar" href="{ %url 'trainer_list'% }"> Trainer </a> 
+    <a class="nav_bar" href="{ %url 'course_list'% }"> Courses</a>
+    <a class="nav_bar" href="{ %url 'CalenderView% }"> Event</a>  -->
     </div>
-    
-    <h1>Welcome to AkiraChix</h1>
-    <a button="button">{{students}} Students</a>
+    <!-- <a button="button">{{students}} Students</a>
     <a button="button">{{courses}} Courses</a>
     <a button="button">{{trainers}} Traines</a>
-    <a button="button">{{events}} Events</a>
+    <a button="button">{{cals}} Events</a> -->
 </body>
 </html>
 

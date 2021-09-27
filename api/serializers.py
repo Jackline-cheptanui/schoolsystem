@@ -4,7 +4,7 @@ from rest_framework import serializers
 from student.models import Student
 from trainer.models import Trainer
 from courses.models import Courses
-from event.models  import Event
+from cal.models  import Event
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -21,7 +21,7 @@ class CoursesSerializer(serializers.ModelSerializer):
         fields=("course_name","trainer","course_code")
 
 
-class EventSerializer(serializers.ModelSerializer):
+class CalSerializer(serializers.ModelSerializer):
     class Meta:
         model=Event
         fields=('Event_Name',"Event_id","Event_planner")

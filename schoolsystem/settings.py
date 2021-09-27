@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&gbc%i+ut19o+4=sg3fd7gje5maj76spf*+ugnp-+2kb^6%qwi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'student',
     'trainer',
     'courses',
-    'event',
+    'cal',
     'core',
     'rest_framework',
     

@@ -1,4 +1,4 @@
-# from schoolsystem.trainer.models import Trainer
+
 from .models import Trainer
 from django.shortcuts import redirect, render
 from .forms import TrainerRegistrationForms
@@ -38,7 +38,7 @@ def edit_trainer(request,id):
     else:
             form=TrainerRegistrationForms(instance=trainer)
     return render(request,"edit_trainer.html",{"form":form})
-def delete_trainer(request,id):
+def delete_trainer(requst,id):
     trainer=Trainer.objects.get(id=id)
     trainer.delete()
     return redirect(trainer_list)

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>
+      welcome to AkiraChix
+    </h4>
+    <div>
+    </div class="topnav">
+    <a style="margin-top: 10%;" href="{ %url 'cal:event_form'% }">EVENTS</a>
+    <a style="margin-top: 10%;" href="{ %url 'courses:register_courses'% }">COURSES</a>
+    <a style="margin-top: 10%;" href="{ %url 'trainer:register_trainer'% }">TRAINER</a>
+    <a style="margin-top: 10%;" href="{ %url 'student:register_student'% } ">STUDENT</a>
+    </div>
+    <h2>codehive calender</h2>
+    {% block content %}
+    <div class="heading">
+    <div class="clearfix">
+        <a class="btn btn-info left" href="{ % url ' cal:calendar' %}?{{prev_month}}">Prevous Month</a>
+        <a class="btn btn-info left" href="{ % url ' cal:calendar' %}?{{next_month}}">Next Month</a>
+    </div>
+    {{ calendar}}
+    {% endblock %}
+    </div>
+    <style>
+     div{
+         text-align: right;
+         margin-right: 150px;
+         margin-top: 40px;
+         margin-left: 30px;
+         
+        }
+        h1{
+            text-align: center;
+            color: blueviolet;
+            margin-bottom: 40px;
+        }
+        .heading{
+            border-radius: 10px;
+            box-shadow: 20px;
+            background-color: white;
+            margin-left: 100px;
+        }
+        .calendar{
+            width: 78%;
+            margin: auto;
+            font-size: 13px;
+        }
+        .calendar tr, .calendar td{
+            border:  1px  solid plum;
+        }
+        .calendar th{
+            padding: 10px;
+            text-align: center;
+            font-size: 28px;
+            color: purple;
+        }
+        .calendar td{
+            width:  70px;
+            height: 50px;
+            padding: 20px 0px 5px;
+        }
+        h2{
+            color:  white;
+            text-align: center;
+            padding-top: 20px;
+            background-color: purple;
+        }
+        .month{
+            font-size: 55px;
+            color: purple;
+        }
+        .date{
+            font-size: 16px;
+            color: purple;
+        }
+        ul{
+            height: 100%;
+            padding: 0px 5px 0px 20px;
+        }
+        a{
+            color: purple;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 10px;
+            text-align: right;
+        }
+        body{
+            background-color: white;
+        }
+    </style>
+</body>
+</html>

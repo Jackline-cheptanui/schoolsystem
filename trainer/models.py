@@ -30,7 +30,7 @@ class Trainer(models.Model):
     )
     nationality=models.CharField(max_length =23,choices=nationality_choices,null=True)
     language_choices=(
-        (u'E','English'),
+        (u'E','u''English'),
         (u'k','u''kiswahili'),
         (u'ki','u''kinywaranda'),
     )
