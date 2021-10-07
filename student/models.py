@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+
 
 
 
@@ -6,6 +8,8 @@ from django.db import models
 class Student(models.Model):
     def full_name(self):
         return f"{self.first_name}{self.last_name}"
+    def year_of_birth(self):
+        return 2021-self.age
     first_name=models.CharField(max_length=15, null=True)
     last_name=models.CharField(max_length=12, null=True)
     age=models.PositiveSmallIntegerField(null=True)

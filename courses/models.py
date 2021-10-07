@@ -1,6 +1,7 @@
 # from schoolsystem.trainer.views import trainer_profile
 from django.db import models
 
+
 # Create your models here.
 class Courses(models.Model):
     def full_name(self):

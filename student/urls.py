@@ -5,6 +5,7 @@ from.views import student_list
 from.views import edit_student
 
 
+
 # app_name='student'
 urlpatterns=[
     path("register/", register_student,name="register_student"),
