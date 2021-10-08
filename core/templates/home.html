@@ -9,16 +9,8 @@
 </head>
 <body>
     <style>
-      
-
-
-
-
-        
         body{
       background-image: url("https://i.pinimg.com/originals/6f/27/2f/6f272f5f7caf461c4eed8ad75eafcf52.jpg");
-      
-
     }
  .home {
 /* overflow: hidden; */
@@ -59,12 +51,14 @@ float: right;
   width: 100%;
   display: inline;
 background-color: #800080;
+background-color: black;
   padding-right: 90px;
 }
  .nav_bar:hover{
 color: brown;
 cursor: pointer;
 }
+
 .button{
   float: left,20px;
 
@@ -79,24 +73,69 @@ height: 100px;
   text-decoration: none;
   padding: 40px;
 }
+.content p{
+  font-size: 1.2em;
+  color: #800080;
+}
+.content h2{
+  font-size: 3em;
+  color: #800080;
+
+}
+.content a{
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: wheat;
+  margin-top: 20px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 5px 10px;
+}
+.content{
+  transform: translateX(-100px);
+    max-width: 700px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.01);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    padding: 40px;
+    padding-left: 110px;
+    margin-top: 20px;
+    margin-left: 170px;
+}
 
 </style> 
-<input type="search" name="item_name" placeholder="search for admission" class="form-control form-control-borderless">
+<!-- <input type="search" name="item_name" placeholder="search for admission" class="form-control form-control-borderless">
 </div>
 <div class="col-auto">
     <button class="btn btn-success" type="submit">search</button>
 </div>
-</div>
+</div> -->
 
 
 
 <div class="navbar">
     
-    <h1>Welcome to AkiraChix</h1>    
+    <!-- <h1>Welcome to AkiraChix</h1>     -->
     <a href="{% url 'CalenderView'%}">Events</a>
        <a href="{% url 'course_list' %}">Courses</a>
        <a href="{% url 'student_list' %}">Students</a>
        <a href="{% url 'trainer_list'%}">Trainers</a>
+    </div>
+    <a href="{% url 'CalenderView'%}">Events</a>
+       <a href="{% url 'register_course' %}">Courses</a>
+       <a href="{% url 'register_student' %}">Students</a>
+       <a href="{% url 'register_trainer'%}">Trainers</a>
+
+    <div class="content">
+      <h2>Welcome to</h2>
+      <p>AkiraChix registration form</p>
+      <a href="https://akirachix.com/">Read more</a>
+
     </div>
    
 </body>
