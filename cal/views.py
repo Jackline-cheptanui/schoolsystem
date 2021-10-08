@@ -5,8 +5,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.utils.safestring import mark_safe
 from .forms import EventForm
+# import calendar as cal
 from .models import *
 from .utils import Calendar
+
  
 # Create your views here.
  
@@ -15,7 +17,7 @@ class CalendarView(generic.ListView):
    template_name = 'cal_list.html'
    def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
-       d = get_date(self.request.GET.get('month', None))
+       d =get_date(self.request.GET.get('month', None))
        cal = Calendar(d.year, d.month)
        html_cal=cal.formatmonth(withyear=True)
        context['calendar'] = mark_safe(html_cal)
@@ -34,18 +36,18 @@ def next_month(d):
    month = 'month=' + str(next_month.year) + '-' + str(next_month.month)
    return month
 def get_date(req_month):
-   if req_month:
+    if req_month:
        year, month = (int(x) for x in req_month.split('-'))
        return date(year, month, day=1)
-   return datetime.today()
+    return datetime.today()
 def event(request, event_id=None):
-   instance = Event()
-   if event_id:
-       instance = get_object_or_404(Event, pk=event_id)
-   else:
+    instance = Event()
+    if event_id:
+        instance = get_object_or_404(Event, pk=event_id)
+    else:
        instance = Event()
-   form = EventForm(request.POST or None, instance=instance)
-   if request.POST and form.is_valid():
-       form.save()
-       return redirect('event_form.html')
-   return render(request, 'event_form.html', {'form': form})
+       form = EventForm(request.POST or None, instance=instance)
+       if request.POST and form.is_valid():
+           form.save()
+           return redirect('event_form.html')
+    return render(request, 'event_form.html', {'form': form})
