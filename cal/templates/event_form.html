@@ -10,7 +10,7 @@
     {% block title %}
     {% endblock %}
 
-    { % block content %}
+    <!-- { % block content %} -->
     <h5>AkiraChix codehive</h5>
     <div class="topnav">
        <a style="margin-top: 10%;" href="{ %url 'cal:event_form'% }">EVENT</a>
@@ -19,6 +19,7 @@
        <a style="margin-top: 10%;" href="{ %url 'courses:register_courses'% }">COURSES</a>
     </div>
     <div>
+        <!-- { % block content %} -->
         <form method="post">
             <h8>Event</h8>
             {% csrf_token %}

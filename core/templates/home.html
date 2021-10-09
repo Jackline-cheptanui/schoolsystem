@@ -23,7 +23,7 @@ width: 100%;
 
 .home a {
 margin-right: 2%;
-color: black;
+/* color: black; */
 padding: 10px 16px;
 text-decoration: none;
 font-size: 25px;
@@ -42,19 +42,19 @@ float: right;
  margin-top: 9%;
 }
 .navbar{
-  font-size: 20px;
+  font-size: 40px;
   text-decoration: none;
   text-align: center;
   float: right;
   padding-left: 60px;
- color: white;
+  color: black;
   width: 100%;
   display: inline;
-background-color: #800080;
-background-color: black;
+ background-color: #800080;
+ /* background-color: black; */
   padding-right: 90px;
 }
- .nav_bar:hover{
+.nav_bar:hover{
 color: brown;
 cursor: pointer;
 }
@@ -71,7 +71,9 @@ height: 100px;
 .nav_bar{
   font-size: 40px;
   text-decoration: none;
-  padding: 40px;
+  padding: 50px;
+  font-size: 50px;
+  color: black;
 }
 .content p{
   font-size: 1.2em;
@@ -119,8 +121,6 @@ height: 100px;
 
 
 <div class="navbar">
-    
-    <!-- <h1>Welcome to AkiraChix</h1>     -->
     <a href="{% url 'CalenderView'%}">Events</a>
        <a href="{% url 'course_list' %}">Courses</a>
        <a href="{% url 'student_list' %}">Students</a>
